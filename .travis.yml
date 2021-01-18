@@ -17,7 +17,7 @@ before_script:
 - sfdx --version
 - sfdx plugins --core
 script:
-- sfdx force:auth:logout --username lightningpoc1@lghtapp.com
+- sfdx force:auth:logout --targetusername lightningpoc1@lghtapp.com
 - sfdx auth:jwt:grant --instanceurl https://login.salesforce.com  --clientid $CONSUMERKEY
   --jwtkeyfile ./assets/server.key --username $USERNAME --setalias UAT
 - sfdx force:mdapi:deploy --wait 10 --deploydir $DEPLOYDIR --targetusername lightningpoc1@lghtapp.com --testlevel
