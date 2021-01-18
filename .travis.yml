@@ -18,6 +18,6 @@ before_script:
 - sfdx plugins --core
 script:
 - sfdx auth:jwt:grant --instanceurl https://login.salesforce.com  --clientid $CONSUMERKEY
-  --jwtkeyfile ./assets/server.key --username $USERNAME --setalias UAT
+  --jwtkeyfile assets/server.key --username $USERNAME --setalias UAT
 - sfdx force:mdapi:deploy --wait 10 --deploydir $DEPLOYDIR --targetusername lightningpoc1@lghtapp.com --testlevel
   $TESTLEVEL
